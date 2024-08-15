@@ -1,12 +1,14 @@
 package net.luka;
 
 import com.mojang.logging.LogUtils;
+import net.luka.test_run.item.ModCreativeModeTabs;
 import net.luka.test_run.item.Moditems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.EventBus;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,6 +29,8 @@ public class testrun
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
         Moditems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -46,9 +50,10 @@ public class testrun
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
 
-        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
         {
-            event.accept(Moditems.DILDO);
+            event.accept(Moditems.LISIANTHUS);
+            event.accept(Moditems.LISIANTHUS_SEEDS);
         }
 
     }

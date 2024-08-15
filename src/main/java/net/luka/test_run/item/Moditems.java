@@ -11,8 +11,11 @@ public class Moditems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, testrun.MODID);
 
-    public static final RegistryObject<Item> DILDO = ITEMS.register("dildo",
+    public static final RegistryObject<Item> LISIANTHUS = ITEMS.register("lisianthus",
             ()-> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LISIANTHUS_SEEDS = ITEMS.register("lisianthusseeds",
+            ()-> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus)
     {
