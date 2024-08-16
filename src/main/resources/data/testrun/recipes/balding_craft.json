@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category":"misc",
+  "pattern":
+          [
+            "###",
+            "#+#",
+            "###"
+          ],
+  "key":
+  {
+    "#": {"item": "testrun:new_block"},
+    "+": {"item": "minecraft:shears"}
+  },
+  "result":
+  {
+    "item": "testrun:baldy",
+    "count": 8
+  }
+}

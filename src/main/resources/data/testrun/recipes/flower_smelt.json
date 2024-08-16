@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 20,
+  "experience": 0.7,
+  "group": "baldy",
+  "ingredient":
+  {
+    "item": "testrun:baldy"
+  },
+  "result": "testrun:lisianthus"
+}
