@@ -17,7 +17,6 @@ public class VoyagerBoots extends Item
 
     @Override
     public InteractionResult useOn(UseOnContext pContext)
-
     {
         if (!pContext.getLevel().isClientSide())
         {
