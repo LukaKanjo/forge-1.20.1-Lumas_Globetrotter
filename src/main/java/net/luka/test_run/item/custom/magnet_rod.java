@@ -11,9 +11,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class VoyagerBoots extends Item
+public class magnet_rod extends Item
 {
-    public VoyagerBoots(Properties pProperties) {super(pProperties);}
+    public magnet_rod(Properties pProperties) {super(pProperties);}
 
     @Override
     public InteractionResult useOn(UseOnContext pContext)

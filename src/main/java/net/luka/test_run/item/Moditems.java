@@ -16,8 +16,6 @@ public class Moditems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LISIANTHUS_SEEDS = ITEMS.register("lisianthusseeds",
             ()-> new Item(new Item.Properties()));
-
-    //shit has to be used
     public static final RegistryObject<Item> VOYAGERBOOTS = ITEMS.register("voyagerboots",
             ()-> new VoyagerBoots(new Item.Properties().durability(100)));
 
