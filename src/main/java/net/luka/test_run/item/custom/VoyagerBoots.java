@@ -50,7 +50,7 @@ public class VoyagerBoots extends Item
         pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
                 player -> player.broadcastBreakEvent(player.getUsedItemHand()));
 
-        return InteractionResult.SUCCESS
+        return InteractionResult.SUCCESS;
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block)
@@ -61,6 +61,6 @@ public class VoyagerBoots extends Item
 
     private boolean isValueableBlock(BlockState state)
     {
-        return state.is(Blocks.IRON_ORE)
+        return state.is(Blocks.IRON_ORE);
     }
 }
