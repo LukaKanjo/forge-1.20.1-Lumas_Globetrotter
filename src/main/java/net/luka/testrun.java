@@ -53,7 +53,7 @@ public class testrun
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
 
-        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS)
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
         {
             event.accept(Moditems.LISIANTHUS);
             event.accept(Moditems.LISIANTHUS_SEEDS);
