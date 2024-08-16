@@ -2,5 +2,8 @@
   "item.testrun.lisianthus": "Lisianthus",
   "item.testrun.lisianthusseeds": "Lisianthus seeds",
 
+  "block.testrun.new_block": "New Block",
+  "block.testrun.baldy": "Block of Zohaib",
+
   "creativetab.testrun_tab": "Testrun Tab"
 }

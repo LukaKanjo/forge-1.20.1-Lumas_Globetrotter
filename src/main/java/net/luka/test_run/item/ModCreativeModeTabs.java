@@ -1,5 +1,6 @@
 package net.luka.test_run.item;
 
+import net.luka.test_run.block.ModBlocks;
 import net.luka.testrun;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -20,8 +21,15 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.testrun_tab"))
                     .displayItems((pParameters, pOutput) ->
                     {
+                        //items
+
                         pOutput.accept(Moditems.LISIANTHUS.get());
                         pOutput.accept(Moditems.LISIANTHUS_SEEDS.get());
+
+                        //Blocks
+
+                        pOutput.accept(ModBlocks.NEWBLOCK.get());
+                        pOutput.accept(ModBlocks.BALDZOHAIB.get());
                     })
                     .build());
 
