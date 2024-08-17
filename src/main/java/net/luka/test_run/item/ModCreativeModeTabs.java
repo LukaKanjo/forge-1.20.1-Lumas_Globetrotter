@@ -26,6 +26,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(Moditems.LISIANTHUS.get());
                         pOutput.accept(Moditems.LISIANTHUS_SEEDS.get());
                         pOutput.accept(Moditems.VOYAGERBOOTS.get());
+                        pOutput.accept(Moditems.FOODCAN.get());
 
                         //Blocks
 

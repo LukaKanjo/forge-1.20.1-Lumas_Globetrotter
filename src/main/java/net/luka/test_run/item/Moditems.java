@@ -1,5 +1,6 @@
 package net.luka.test_run.item;
 
+import net.luka.test_run.item.custom.Foodcan;
 import net.luka.test_run.item.custom.VoyagerBoots;
 import net.luka.testrun;
 import net.minecraft.world.item.Item;
@@ -18,6 +19,8 @@ public class Moditems {
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> VOYAGERBOOTS = ITEMS.register("voyagerboots",
             ()-> new VoyagerBoots(new Item.Properties().durability(100)));
+    public static final RegistryObject<Item> FOODCAN = ITEMS.register("foodcan",
+            ()-> new Foodcan(new Item.Properties().durability(100)));
 
 
     public static void register(IEventBus eventBus)

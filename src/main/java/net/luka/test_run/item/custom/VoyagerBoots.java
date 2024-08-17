@@ -1,26 +1,20 @@
 package net.luka.test_run.item.custom;
 
-import net.minecraft.client.resources.language.I18n;
-import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
+import net.minecraftforge.event.level.NoteBlockEvent;
 
 public class VoyagerBoots extends Item
 {
@@ -30,20 +24,45 @@ public class VoyagerBoots extends Item
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand)
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
     {
-        ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
+        if (pEntity instanceof Player player)
+        {
+            boolean hasItem = false;
 
-        pPlayer.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,20,2));
+            for (ItemStack itemStack : player.getInventory().items)
+            {
+                if (itemStack.is(this))
+                {
+                    hasItem = true;
+                    break;
+                }
+            }
 
-        return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());
+            if (hasItem)
+            {
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,20,2));
+                player.setMaxUpStep(1.0f);
+                //player.getAbilities().setWalkingSpeed(0.8f);
+            }
+            else
+            {
+                if (player.hasEffect(MobEffects.MOVEMENT_SPEED))
+                {
+                    player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                    player.setMaxUpStep(0.3f);
+                    //player.getAbilities().setWalkingSpeed(0.1f);
+                }   
+            }
+        }
+
     }
 
     @Override
     public UseAnim getUseAnimation(ItemStack pStack)
     {
-        return UseAnim.SPEAR;
+        return UseAnim.NONE;
     }
+
+
 }
-
-
