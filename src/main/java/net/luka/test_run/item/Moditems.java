@@ -4,6 +4,7 @@ import net.luka.test_run.item.custom.Foodcan;
 import net.luka.test_run.item.custom.VoyagerBoots;
 import net.luka.testrun;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,9 +19,11 @@ public class Moditems {
     public static final RegistryObject<Item> LISIANTHUS_SEEDS = ITEMS.register("lisianthusseeds",
             ()-> new Item(new Item.Properties()));
     public static final RegistryObject<Item> VOYAGERBOOTS = ITEMS.register("voyagerboots",
-            ()-> new VoyagerBoots(new Item.Properties().durability(100)));
+            ()-> new VoyagerBoots(new Item.Properties()
+                    .stacksTo(1)
+                    .rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> FOODCAN = ITEMS.register("foodcan",
-            ()-> new Foodcan(new Item.Properties().durability(100)));
+            ()-> new Foodcan(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus)

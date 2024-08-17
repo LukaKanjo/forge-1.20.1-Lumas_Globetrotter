@@ -58,7 +58,6 @@ public class testrun
             event.accept(Moditems.LISIANTHUS);
             event.accept(Moditems.LISIANTHUS_SEEDS);
             event.accept(Moditems.VOYAGERBOOTS);
-            event.accept(Moditems.FOODCAN);
         }
 
     }

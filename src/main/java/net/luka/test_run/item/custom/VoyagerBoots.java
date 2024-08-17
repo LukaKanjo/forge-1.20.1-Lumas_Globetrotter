@@ -24,44 +24,10 @@ public class VoyagerBoots extends Item
         super(pProperties);
     }
 
-//    @Override
-//    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
-//    {
-//        if (pEntity instanceof Player player)
-//        {
-//            boolean hasItem = false;
-//
-//            for (ItemStack itemStack : player.getInventory().items)
-//            {
-//                if (itemStack.is(this))
-//                {
-//                    hasItem = true;
-//                    break;
-//                }
-//            }
-//
-//            if (hasItem)
-//            {
-//                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,20,2));
-//                player.setMaxUpStep(1.0f);
-//                //player.getAbilities().setWalkingSpeed(0.8f);
-//            }
-//            if (hasItem == false)
-//            {
-//                //player.removeEffect(MobEffects.MOVEMENT_SPEED);
-//                player.setMaxUpStep(0.3f);
-//                //player.getAbilities().setWalkingSpeed(0.1f);
-//            }
-//        }
-//
-//    }
-
-
-
     @Override
-    public void onInventoryTick(ItemStack stack, Level level, Player player, int slotIndex, int selectedIndex) {
-
-        if (player != null)
+    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
+    {
+        if (pEntity instanceof Player player)
         {
             boolean hasItem = false;
 
@@ -69,9 +35,6 @@ public class VoyagerBoots extends Item
             {
                 if (itemStack.is(this))
                 {
-                    if (!hasItem) {
-                        System.out.println("hasItem changed from false to true");
-                    }
                     hasItem = true;
                     break;
                 }
@@ -79,27 +42,27 @@ public class VoyagerBoots extends Item
 
             if (hasItem)
             {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 220, 2));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,20,2));
                 player.setMaxUpStep(1.0f);
                 //player.getAbilities().setWalkingSpeed(0.8f);
             }
             else
             {
-                if (player.hasEffect(MobEffects.MOVEMENT_SPEED)) {
-                    System.out.println("hasItem is false, removing movement speed effect");
-                }
-                player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                //player.removeEffect(MobEffects.MOVEMENT_SPEED);
                 player.setMaxUpStep(0.3f);
                 //player.getAbilities().setWalkingSpeed(0.1f);
             }
         }
+
     }
 
-    //@Override
-//    public UseAnim getUseAnimation(ItemStack pStack)
-//    {
-//        return UseAnim.NONE;
-//    }
+
+
+    @Override
+    public UseAnim getUseAnimation(ItemStack pStack)
+    {
+       return UseAnim.NONE;
+    }
 
 
 }
