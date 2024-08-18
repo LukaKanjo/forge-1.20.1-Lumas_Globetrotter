@@ -34,22 +34,23 @@ public class PlayerTickEventHandler {
                     break;
                 }
             }
-
-            // Set the static boolean in VoyagerBoots accordingly
-            VoyagerBoots.isInInventory = hasVoyagerBoots;
-
-            // Debug output to verify the behavior
-            System.out.println("VoyagerBoots in inventory: " + VoyagerBoots.isInInventory);
-
-            if(VoyagerBoots.isInInventory)
-            {
+            if (VoyagerBoots.isInInventory) {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 220, 2));
                 player.setMaxUpStep(1.0f);
+                System.out.println("Positive Effect has been done");
             }
-            else
-            {
-                player.removeEffect(MobEffects.MOVEMENT_SPEED);
-                player.setMaxUpStep(0.3f);
+            // Only proceed if the state of isInInventory has changed
+            if (VoyagerBoots.isInInventory != hasVoyagerBoots) {
+                VoyagerBoots.isInInventory = hasVoyagerBoots;
+
+                 if (!VoyagerBoots.isInInventory){
+                    player.removeEffect(MobEffects.MOVEMENT_SPEED);
+                    player.setMaxUpStep(0.6f);
+                    System.out.println("Negative Effect has been done");
+                }
+
+                // Debug output to verify the behavior
+                System.out.println("VoyagerBoots in inventory: " + VoyagerBoots.isInInventory);
             }
         }
     }
