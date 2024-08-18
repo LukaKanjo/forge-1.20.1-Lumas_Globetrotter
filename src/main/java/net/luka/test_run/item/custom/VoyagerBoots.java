@@ -17,52 +17,19 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.event.level.NoteBlockEvent;
 import org.apache.commons.lang3.ObjectUtils;
 
-public class VoyagerBoots extends Item
-{
-    public VoyagerBoots(Properties pProperties)
-    {
+public class VoyagerBoots extends Item {
+
+    // Static boolean field to track the presence of the item in inventory
+    public static boolean isInInventory = false;
+
+    public VoyagerBoots(Properties pProperties) {
         super(pProperties);
     }
 
-    @Override
-    public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected)
-    {
-        if (pEntity instanceof Player player)
-        {
-            boolean hasItem = false;
-
-            for (ItemStack itemStack : player.getInventory().items)
-            {
-                if (itemStack.is(this))
-                {
-                    hasItem = true;
-                    break;
-                }
-            }
-
-            if (hasItem)
-            {
-                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED,20,2));
-                player.setMaxUpStep(1.0f);
-                //player.getAbilities().setWalkingSpeed(0.8f);
-            }
-            else
-            {
-                //player.removeEffect(MobEffects.MOVEMENT_SPEED);
-                player.setMaxUpStep(0.3f);
-                //player.getAbilities().setWalkingSpeed(0.1f);
-            }
-        }
-
-    }
-
 
 
     @Override
-    public UseAnim getUseAnimation(ItemStack pStack)
-    {
-       return UseAnim.NONE;
+    public UseAnim getUseAnimation(ItemStack pStack) {
+        return UseAnim.NONE;
     }
-
-
 }
