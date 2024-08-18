@@ -14,7 +14,8 @@ import net.minecraft.world.level.Level;
 
 public class Foodcan extends Item {
 
-    public Foodcan(Properties pProperties) {
+    public Foodcan(Properties pProperties)
+    {
         super(pProperties);
     }
 }
