@@ -16,6 +16,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+
 @Mod.EventBusSubscriber
 public class PlayerTickEventHandler {
 
@@ -49,14 +50,14 @@ public class PlayerTickEventHandler {
             {
                 //player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 220, 2));
                 player.setMaxUpStep(1.0f);
-                player.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.4f);
+                player.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.2f);
             }
             else
             {
                     //player.removeEffect(MobEffects.MOVEMENT_SPEED);
                     player.setMaxUpStep(0.6f);
-                    player.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.1f);
-                }
+                    player.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.1f); //0.1 is minecraft base value
+
             }
         }
     }
