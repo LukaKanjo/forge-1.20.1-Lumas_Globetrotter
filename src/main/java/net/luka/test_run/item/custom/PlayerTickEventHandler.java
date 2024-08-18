@@ -53,8 +53,6 @@ public class PlayerTickEventHandler {
             }
             else
             {
-                if (player.hasEffect(MobEffects.MOVEMENT_SPEED))
-                {
                     //player.removeEffect(MobEffects.MOVEMENT_SPEED);
                     player.setMaxUpStep(0.6f);
                     player.getAttribute(Attributes.MOVEMENT_SPEED).setBaseValue(0.1f);
