@@ -1,0 +1,22 @@
+{
+  "display": {
+    "title": {
+      "text": "Exploration Achievements"
+    },
+    "description": {
+      "text": "Explore the world and complete various challenges."
+    },
+    "icon": {
+      "item": "minecraft:map"
+    },
+    "background": "minecraft:textures/block/dirt_path_top.png",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "parent": "testrun:root",
+  "display": {
+    "title": {
+      "text": "Long Distance Traveler"
+    },
+    "description": {
+      "text": "Travel a total of 10,000 blocks by walking or sprinting."
+    },
+    "icon": {
+      "item": "minecraft:iron_boots"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "walked_distance": {
+      "trigger": "minecraft:impossible",
+      "conditions": {
+        "stat": {
+          "type": "minecraft:custom",
+          "stat": "minecraft:walk_one_cm",
+          "value": {
+            "min": 100
+          }
+        }
+      }
+    },
+    "sprinted_distance": {
+      "trigger": "minecraft:impossible",
+      "conditions": {
+        "stat": {
+          "type": "minecraft:custom",
+          "stat": "minecraft:sprint_one_cm",
+          "value": {
+            "min": 100
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "walked_distance",
+      "sprinted_distance"
+    ]
+  ]
+}
