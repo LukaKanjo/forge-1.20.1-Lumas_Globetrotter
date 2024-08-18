@@ -2,6 +2,7 @@ package net.luka;
 
 import com.mojang.logging.LogUtils;
 import net.luka.test_run.block.ModBlocks;
+import net.luka.test_run.effect.ModEffects;
 import net.luka.test_run.item.ModCreativeModeTabs;
 import net.luka.test_run.item.Moditems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -35,6 +36,8 @@ public class testrun
         Moditems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+
+        ModEffects.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
